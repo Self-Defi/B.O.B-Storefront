@@ -121,9 +121,9 @@ el('copyRevision').addEventListener('click',()=>copy(el('revisionPrompt').innerT
 el('downloadPrompt').addEventListener('click',()=>download(slug(val('business'))+'-llm-brand-prompt.txt',el('promptOutput').value||prompt()));
 el('saveBrief').addEventListener('click',()=>download(slug(val('business'))+'-brand-brief.md',brief(),'text/markdown;charset=utf-8'));
 const rows=[...el('budgetBody').querySelectorAll('tr')];
-function budgetTotals(){let a=0,b=0;rows.forEach(tr=>{a+=Math.max(0,Number(tr.querySelector('[data-once]').value)||0);b+=Math.max(0,Number(tr.querySelector('[data-month]').value)||0)});el('onceTotal').textContent='</html>+a.toFixed(2);el('monthTotal').textContent='</html>+b.toFixed(2)}
+function budgetTotals(){let a=0,b=0;rows.forEach(tr=>{a+=Math.max(0,Number(tr.querySelector('[data-once]').value)||0);b+=Math.max(0,Number(tr.querySelector('[data-month]').value)||0)});el('onceTotal').textContent=String.fromCharCode(36)+a.toFixed(2);el('monthTotal').textContent=String.fromCharCode(36)+b.toFixed(2)}
 el('budgetBody').addEventListener('input',budgetTotals);
-el('saveBudget').addEventListener('click',()=>{const lines=['Item,One-time USD,Recurring USD per month'];rows.forEach(tr=>{let item=tr.cells[0].textContent.replaceAll('"','""');lines.push('"'+item+'",'+(Number(tr.querySelector('[data-once]').value)||0)+','+(Number(tr.querySelector('[data-month]').value)||0))});lines.push('TOTAL,'+el('onceTotal').textContent.replace('</html>,'')+','+el('monthTotal').textContent.replace('</html>,''));download(slug(val('business'))+'-brand-budget.csv',lines.join('\r\n'),'text/csv;charset=utf-8')});
+el('saveBudget').addEventListener('click',()=>{const lines=['Item,One-time USD,Recurring USD per month'];rows.forEach(tr=>{let item=tr.cells[0].textContent.replaceAll('"','""');lines.push('"'+item+'",'+(Number(tr.querySelector('[data-once]').value)||0)+','+(Number(tr.querySelector('[data-month]').value)||0))});lines.push('TOTAL,'+el('onceTotal').textContent.replace(String.fromCharCode(36),'')+','+el('monthTotal').textContent.replace(String.fromCharCode(36),''));download(slug(val('business'))+'-brand-budget.csv',lines.join('\r\n'),'text/csv;charset=utf-8')});
 budgetTotals();
 })();
 </script></body></html>
