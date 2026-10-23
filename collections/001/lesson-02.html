@@ -44,9 +44,9 @@
 </div>
 <div class="panel" style="margin-top:18px">
 <h3>Step 2 — Copy the prompt into your chosen LLM</h3>
-<textarea id="promptOutput" class="promptbox" rows="18" readonly aria-label="Generated prompt">Complete Step 1 and select Generate my LLM prompt.</textarea>
+<textarea id="promptOutput" class="promptbox" rows="18" readonly aria-label="Generated prompt">You are a beginner-friendly branding coach. Help me build a brand using the business details from Step 1. Ask for missing information, propose a name and color system, give me a copyable brand guide and an editable SVG logo example. Show one-time and recurring costs, identify anything that needs manual verification, and keep me in control of editable source files. Answer one step at a time.</textarea>
 <div class="actions"><button class="btn" id="copyPrompt" type="button">Copy prompt</button><button class="btn alt" id="downloadPrompt" type="button">Download prompt (.txt)</button></div>
-<p class="help" id="promptStatus" role="status" aria-live="polite"></p>
+<p class="help" id="promptStatus" role="status" aria-live="polite">If the button does not change the text above, use the starter prompt already displayed and add your Step 1 answers manually.</p>
 </div>
 <div class="step"><b>STEP 3 / REVIEW, DON'T BLINDLY ACCEPT</b><h3>Challenge the LLM's output</h3><p>Have it explain its reasoning, list assumptions, suggest low-cost tools, and separate confirmed facts from guesses. Verify business name and domain availability yourself. In the U.S., the <a href="https://www.uspto.gov/trademarks/search" target="_blank" rel="noopener">USPTO trademark database</a> is one screening source, not legal clearance. Don't publish unverified promises, copied logos, or confidential client details.</p></div>
 <div class="step"><b>STEP 4 / GENERATE A REUSABLE PROMPT</b><h3>Iterate using a second prompt</h3><p>Paste your model's first output back into the same chat and use this follow-up:</p><div class="panel"><p id="revisionPrompt" style="color:#f5f5f4">Act as a critical brand reviewer. Audit the brand proposal you just created for a complete beginner on a limited budget. Identify confusing language, unsupported claims, accessibility/contrast problems, licensing risks, and any recurring subscription dependency. Return a prioritized correction list and revised deliverables. Do not claim you checked trademark or domain availability unless I supply proof. Tell me which editable files I must retain to keep independent control.</p><button type="button" class="btn alt" id="copyRevision">Copy revision prompt</button></div></div>
@@ -125,5 +125,26 @@ function budgetTotals(){let a=0,b=0;rows.forEach(tr=>{a+=Math.max(0,Number(tr.qu
 el('budgetBody').addEventListener('input',budgetTotals);
 el('saveBudget').addEventListener('click',()=>{const lines=['Item,One-time USD,Recurring USD per month'];rows.forEach(tr=>{let item=tr.cells[0].textContent.replaceAll('"','""');lines.push('"'+item+'",'+(Number(tr.querySelector('[data-once]').value)||0)+','+(Number(tr.querySelector('[data-month]').value)||0))});lines.push('TOTAL,'+el('onceTotal').textContent.replace(String.fromCharCode(36),'')+','+el('monthTotal').textContent.replace(String.fromCharCode(36),''));download(slug(val('business'))+'-brand-budget.csv',lines.join('\r\n'),'text/csv;charset=utf-8')});
 budgetTotals();
+})();
+</script><script>
+/* Small independent controller, deliberately separate from the budget and export logic. */
+(function(){
+  function ready(){
+    var btn=document.getElementById('makePrompt');
+    var area=document.getElementById('promptOutput');
+    var status=document.getElementById('promptStatus');
+    if(!btn||!area){return;}
+    btn.onclick=function(){
+      var fields=[['Business name','business'],['Business type','service'],['Ideal customer','audience'],['Market','location'],['Budget USD','budget'],['Customer problem','problem'],['Service boundaries','scope'],['Desired brand personality','tone']];
+      var out=['You are my practical branding coach. I am using '+(document.getElementById('llm')?.value||'my chosen LLM')+'.','Build my brand step by step using the facts below. Ask me to confirm anything uncertain. Provide name concepts, a copyable prompt for editable SVG artwork, a brand guide, cost breakdown, and complete ownership instructions. Do not invent legal or trademark clearances.'];
+      fields.forEach(function(item){var e=document.getElementById(item[1]);out.push(item[0]+': '+(e&&e.value.trim()?e.value.trim():'[Please ask me]'));});
+      out.push('Keep startup costs within my budget and show recurring expenses separately. Explain how I can edit, download and maintain every deliverable myself.');
+      area.value=out.join('\n\n');
+      if(status)status.textContent='Prompt generated below. Tap inside Step 2 to select or copy.';
+      area.scrollIntoView({behavior:'smooth',block:'center'});
+    };
+    if(status)status.textContent='Prompt tool loaded. Fill Step 1, then press Generate my LLM prompt.';
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ready);else ready();
 })();
 </script></body></html>
