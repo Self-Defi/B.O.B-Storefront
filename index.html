@@ -19,6 +19,19 @@
  .top .links{gap:5px 15px;font-size:12px}
  .top .links a{padding:5px 0}
 }
+
+/* Final mobile brand sizing: deliberately larger logo, clear two-row header. */
+@media(max-width:900px){
+ .top .nav{gap:9px;padding-top:13px;padding-bottom:10px}
+ .top .brand{width:auto;max-width:100%;align-self:flex-start;line-height:0}
+ .top .brand svg{width:225px!important;height:auto!important;max-width:min(70vw,225px)!important;display:block}
+ .top .links{gap:8px 18px;justify-content:flex-start}
+}
+@media(max-width:480px){
+ .top .nav{gap:8px;padding-top:12px;padding-bottom:10px}
+ .top .brand svg{width:205px!important;max-width:70vw!important}
+ .top .links{gap:5px 15px;font-size:12px}
+}
 </style></head><body>
 <header class="top"><div class="wrap nav"><a class="brand" href="#top" aria-label="B.O.B. home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 134" role="img" aria-label="B.O.B. Building on a Budget. Build It. Own It. Control It." style="width:clamp(150px,21vw,235px);height:auto;display:block"><g fill="#101114" font-family="Arial,sans-serif" font-weight="900"><text x="6" y="78" font-size="91" letter-spacing="-8">B</text><text x="254" y="78" font-size="91" letter-spacing="-8">B</text></g><g fill="#d5a02b"><circle cx="105" cy="76" r="8"/><circle cx="251" cy="76" r="8"/><circle cx="351" cy="76" r="8"/></g><circle cx="176" cy="50" r="46" fill="#101114" stroke="#d5a02b" stroke-width="7"/><path d="M148 76V30Q148 25 157 21L164 28Q176 23 188 28L195 21Q204 25 204 32V76L190 83L176 71L162 83Z" fill="#fff"/><path d="M167 42l-11 10 11 10m18-20 11 10-11 10m-3-25-12 30" fill="none" stroke="#d5a02b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><text x="8" y="103" font-family="Arial,sans-serif" font-size="18" font-weight="900" letter-spacing="2" fill="#101114">BUILDING ON A</text><text x="225" y="103" font-family="Arial,sans-serif" font-size="18" font-weight="900" letter-spacing="1" fill="#c4932b">BUDGET</text><path d="M8 117h46m251 0h46" stroke="#d5a02b" stroke-width="3"/><text x="64" y="121" font-family="Arial,sans-serif" font-size="10.1" letter-spacing="1.4" font-weight="700" fill="#101114">BUILD IT. OWN IT. CONTROL IT.</text></svg></a><nav class="links"><a href="collections/001/index.html">Collections</a><a href="#builds">Builds</a><a href="#proof">Proof</a><a href="#philosophy">Philosophy</a><a href="#method">Method</a></nav></div></header>
 <main id="top"><section class="wrap hero"><div><div class="kicker">REAL BUILDS. PRACTICAL KNOWLEDGE. INDEPENDENT OWNERSHIP.</div><h1>Stop renting <span class="gold">what you can build.</span></h1><p>Skip the endless AI-tool research. Learn from working projects and build digital systems you understand, control, and own.</p><div class="actions"><a class="btn" href="#builds">Explore builds ↗</a><a class="btn alt" href="#proof">See our first proof</a></div><div class="values"><span>BUILD IT.</span><span>OWN IT.</span><span>CONTROL IT.</span></div></div>
