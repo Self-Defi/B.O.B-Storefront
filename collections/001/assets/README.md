@@ -1,3 +1,9 @@
+## Upload verification — October 23, 2026
+- `01-timeline/ahi-early-website.jpg` — present, JPEG signature confirmed, now referenced by Collection 001.
+- `02-branding/ahi-primary-logo.jpg` — present, JPEG signature confirmed, now referenced by Lesson 02.
+- `07-first-customer/bree-tv-before.HEIC` — present, but HEIC is not consistently web-displayable. Export/convert the photo to **JPEG** and upload it as `07-first-customer/bree-tv-before.jpg`. Renaming the extension alone does not convert it. Do not delete the original until the JPEG is verified.
+- For subsequent iPhone uploads, use Photos → Share → Options → Most Compatible (where available), or export through Files/Shortcuts as JPEG before committing.
+
 # B.O.B. Collection 001 — Image Upload Guide
 
 Upload to the relevant subfolder using the EXACT suggested file names below. GitHub allows **Add file → Upload files** inside each folder. Keep the .gitkeep files; they are placeholders to make empty directories visible.
