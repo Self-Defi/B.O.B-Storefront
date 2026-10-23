@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="A simple website owned by its builder.">
+<title>My First Website</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header><a class="brand" href="#home">YOUR BUSINESS</a><nav><a href="#services">Services</a><a href="#contact">Contact</a></nav></header>
+<main id="home">
+<section class="hero"><p class="eyebrow">Independent small business</p><h1>Make your service easy to understand.</h1><p>Replace this paragraph with what you offer, whom you serve, and where.</p><a class="button" href="#contact">Request information</a></section>
+<section id="services"><h2>Services</h2><div class="cards"><article><h3>Service one</h3><p>Explain what you do.</p></article><article><h3>Service two</h3><p>Describe the customer outcome.</p></article></div></section>
+<section id="contact"><h2>Get in touch</h2><p>Email: <a href="mailto:hello@example.com">hello@example.com</a></p><p>Replace this placeholder before publishing. No form or customer data storage is configured.</p></section>
+</main>
+<footer>© <span id="year"></span> Your Business · Built and owned by you.</footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body></html>
