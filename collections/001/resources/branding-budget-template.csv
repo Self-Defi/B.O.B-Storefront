@@ -1,0 +1,11 @@
+Category,Item,Required or optional,One-time cost USD,Recurring cost USD per month,Vendor,date paid,Receipt/reference,Owned source retained,Notes
+Branding,Domain name,Optional,,,,,,,
+Branding,Logo design tool,Optional,,,,,,,
+Branding,Typeface/license,Check terms,,,,,,,
+Branding,Vector export,Recommended,,,,,,,
+Print,Business cards,Optional,,,,,,,
+Apparel,DTF transfers,Optional,,,,,,,
+Apparel,Polos,Optional,,,,,,,
+Hosting,Site hosting,Depends on setup,,,,,,,
+Software,Editing subscription,Optional,,,,,,,
+,Total,,"=SUM(D2:D10)","=SUM(E2:E10)",,,,,
