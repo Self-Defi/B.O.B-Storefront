@@ -1,11 +1,16 @@
-Category,Item,Required or optional,One-time cost USD,Recurring cost USD per month,Vendor,date paid,Receipt/reference,Owned source retained,Notes
-Branding,Domain name,Optional,,,,,,,
-Branding,Logo design tool,Optional,,,,,,,
-Branding,Typeface/license,Check terms,,,,,,,
-Branding,Vector export,Recommended,,,,,,,
-Print,Business cards,Optional,,,,,,,
-Apparel,DTF transfers,Optional,,,,,,,
-Apparel,Polos,Optional,,,,,,,
-Hosting,Site hosting,Depends on setup,,,,,,,
-Software,Editing subscription,Optional,,,,,,,
-,Total,,"=SUM(D2:D10)","=SUM(E2:E10)",,,,,
+"Category","Item","Initial USD","Monthly USD","Frequency / notes","Status"
+"Domain","Primary domain","10.46","0","Annual renewal; amount historical","Recorded"
+"Domain","Second domain","10.46","0","Earlier two-domain baseline; confirm renewal","Historical"
+"Branding","25 DTF transfers","18","0","One-time purchase","Recorded"
+"Branding","Four polos","18","0","One-time purchase; heat pressing free","Recorded"
+"Insurance","COI / insurance","60","35","Owner-supplied; verify policy setup/premium classification","User-supplied"
+"Mail","iPostal1","0","40","Monthly","Historical active"
+"Email","Google Workspace","0","6","Monthly","Historical active"
+"Phone","US Mobile","0","10","Monthly","Historical active"
+"Software","ChatGPT","0","20","Monthly, optional for learner","Historical allocation"
+"Hosting","Cloudflare and GitHub","0","0","No additional charges reported","Historical"
+"Payments","Stripe processing","0","0","Variable fee per transaction not modeled","Variable"
+"Branding","Logo design","0","0","No separate cost confirmed","Unconfirmed"
+"Print","Business cards","0","0","Order not confirmed","Unconfirmed"
+"Other","Additional actual expense","0","0","Enter own figures","Editable"
+"","BASELINE TOTAL","=SUM(C2:C15)","=SUM(D2:D15)","Not a complete audited ledger","Calculated"
