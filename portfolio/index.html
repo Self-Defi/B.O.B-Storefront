@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#151615">
+  <meta name="description" content="Jay's B.O.B. portfolio for workflow automation, voice AI, and practical software integration.">
+  <meta property="og:title" content="B.O.B. Portfolio | Jay">
+  <meta property="og:description" content="See the systems I build, adapt, and integrate for small businesses.">
+  <meta property="og:image" content="https://self-defi.github.io/B.O.B-Storefront/assets/social/BOB-Social-Preview-1200x630.png">
+  <link rel="canonical" href="https://self-defi.github.io/B.O.B-Storefront/portfolio/">
+  <link rel="stylesheet" href="portfolio.css">
+  <title>B.O.B. Portfolio | Jay</title>
+</head>
+<body>
+  <a class="skip" href="#projects">Skip to projects</a>
+  <header class="masthead">
+    <a class="masthead-home" href="../">B.O.B. Home</a>
+    <a href="../" class="brand">
+      <img src="assets/bob-wordmark.webp" width="720" height="281" alt="B.O.B. Building on a Budget">
+    </a>
+    <a class="masthead-github" href="https://github.com/Self-Defi">GitHub</a>
+  </header>
+
+  <main class="layout">
+    <aside class="intro" id="about" aria-labelledby="page-title">
+      <p class="eyebrow">Jay <span></span> Phoenix, AZ</p>
+      <h1 id="page-title">Workflow automation <em>&amp; integration</em></h1>
+      <p>I help small businesses connect the software they already use. I use LLMs and open-source repositories to adapt existing tools, build what’s missing, and test the result against the way people work.</p>
+      <nav class="section-nav" aria-label="On this page">
+        <a href="#projects">Selected work</a>
+        <a href="#approach">How I work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </aside>
+
+    <div class="content">
+      <section id="projects" aria-labelledby="projects-title">
+        <header class="section-heading">
+          <h2 id="projects-title">Selected work</h2>
+        </header>
+
+        <article class="project" id="oas">
+          <figure class="project-art oas-art" aria-label="Illustration of the OAS contact review and follow-up workflow">
+            <img src="assets/ahi-wordmark.webp" width="440" height="159" alt="AZHomeInstalls">
+            <div class="oas-mock" aria-hidden="true">
+              <div><i></i> Contact validation <span>Verified</span></div>
+              <div><i></i> Outreach review <span>Approved</span></div>
+              <div><i></i> Reply received <span>Follow-up stopped</span></div>
+            </div>
+          </figure>
+          <div class="project-copy">
+            <p class="eyebrow">Original build <span></span> AZHomeInstalls</p>
+            <h3>Outbound Automation System</h3>
+            <p>I built a workflow that verifies public business contacts, queues approved outreach through Gmail, and stops follow-ups when people reply or opt out.</p>
+            <ul class="stack" aria-label="Technologies"><li>Cloudflare Workers</li><li>D1</li><li>Gmail API</li></ul>
+            <details>
+              <summary>Implementation notes</summary>
+              <p>The workflow checks public source evidence before enrollment. I built in daily send limits, duplicate protections, and a pause for uncertain Gmail responses. The runbook documents test coverage and rollout steps. Self Defi Advisory holds the rights to the original OAS code.</p>
+            </details>
+            <div class="project-links">
+              <a href="https://github.com/Self-Defi/AZHomeInstalls/blob/main/cloudflare/OAS-RELIABILITY.md">Read the runbook</a>
+              <a href="https://github.com/Self-Defi/AZHomeInstalls">GitHub</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" id="jackie">
+          <figure class="project-art jackie-art" aria-label="Illustration of a voice signal for Jackie">
+            <div class="voice-orbit" aria-hidden="true">
+              <div class="waveform"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            </div>
+            <figcaption>Jackie <span>Phone voice agent</span></figcaption>
+          </figure>
+          <div class="project-copy">
+            <p class="eyebrow">In progress <span></span> Bloodline Hauling, LLC</p>
+            <h3>Jackie AI Receptionist</h3>
+            <p>I’m adapting an open-source voice agent for a Colorado Springs hauling business. The goal is to integrate Jackie with its phone workflow while keeping the established business number.</p>
+            <ul class="stack" aria-label="Technologies"><li>LiveKit</li><li>OpenAI Realtime</li><li>Telnyx</li></ul>
+            <details>
+              <summary>Implementation notes</summary>
+              <p>My work focuses on adapting the agent to Bloodline’s call flow and integrating it with the planned Telnyx setup. The upstream receptionist comes from <a href="https://github.com/kirklandsig/AIReceptionist">kirklandsig/AIReceptionist</a> under AGPL-3.0.</p>
+            </details>
+            <div class="project-links">
+              <a href="https://github.com/Self-Defi/Bloodline">GitHub project</a>
+              <a href="https://github.com/kirklandsig/AIReceptionist">Upstream project</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" id="warehouse">
+          <figure class="project-art warehouse-art" aria-label="Illustration of a warehouse rack lookup">
+            <div class="rack-mock" aria-hidden="true">
+              <div class="rack-title"><span>Rack lookup</span><b>104</b></div>
+              <div class="rack-grid">
+                <span>01A</span><span>01B</span><span>02A</span><span>02B</span><strong>03A</strong><span>03B</span>
+              </div>
+              <div class="rack-caption">Selected location <b>104-03A</b></div>
+            </div>
+          </figure>
+          <div class="project-copy">
+            <p class="eyebrow">Working demo <span></span> Warehouse operations</p>
+            <h3>QR Warehouse Inventory</h3>
+            <p>I built a warehouse prototype for inventory intake and rack lookup. Scan a rack label to see what’s stored there, then open an item record for its location, quantity, and status.</p>
+            <ul class="stack" aria-label="Technologies"><li>QR lookup</li><li>JavaScript</li><li>Supabase</li></ul>
+            <details>
+              <summary>Implementation notes</summary>
+              <p>The demo shows intake and location lookup with example data. The separate backend implementation adds live inventory synchronization and item photo storage through Supabase.</p>
+            </details>
+            <div class="project-links">
+              <a href="https://self-defi.github.io/warehouse-inventory-system/">Open the demo</a>
+              <a href="https://github.com/Self-Defi/Warehouse-Management-System">GitHub</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="approach" class="closing" aria-labelledby="approach-title">
+        <h2 id="approach-title">How I work</h2>
+        <p>I start with one workflow and map where data gets entered, moved, or checked. Then I choose what to reuse, build the missing piece, test the handoff and its failure cases, and document it so the team can maintain it.</p>
+      </section>
+      <section id="contact" class="closing contact" aria-labelledby="contact-title">
+        <h2 id="contact-title">Let’s work together</h2>
+        <p>Available for employment or contract work in Phoenix metro and remotely.</p>
+        <div class="project-links">
+          <a href="mailto:johnj@azhomeinstalls.com?subject=B.O.B.%20Portfolio%20Inquiry">Email Jay</a>
+          <a href="https://github.com/Self-Defi">GitHub profile</a>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer><a href="../">Building on a Budget</a><span>Self Defi Advisory</span></footer>
+</body>
+</html>
