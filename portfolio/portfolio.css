@@ -37,8 +37,9 @@ a:hover { color: var(--accent); }
 .masthead-home, .masthead-github { font-size: .875rem; font-weight: 680; text-decoration: none; }
 .masthead-github { justify-self: end; }
 .masthead a:hover { color: var(--gold); }
-.brand { display: block; width: clamp(9.25rem, 22vw, 17rem); }
+.brand { display: block; width: clamp(9.25rem, 22vw, 17rem); text-decoration: none; }
 .brand img { display: block; width: 100%; height: auto; border-radius: .3rem; }
+.brand-byline { display: block; margin-top: .35rem; text-align: center; color: var(--gold); font-size: .875rem; font-weight: 650; }
 
 .layout {
   width: min(100% - 4rem, 78rem);
